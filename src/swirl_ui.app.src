@@ -1,0 +1,12 @@
+{application, swirl_ui, [
+  {description, "swirl web ui"},
+  {vsn, "0.1"},
+  {registered, []},
+  {applications, [
+    kernel,
+    stdlib,
+    cowboy
+  ]},
+  {mod, {swirl_ui, []}},
+  {env, []}
+]}.
