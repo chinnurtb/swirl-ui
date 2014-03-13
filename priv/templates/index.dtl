@@ -11,45 +11,59 @@
   </head>
 
   <body>
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">Swirl</a>
-        </div>
-      </div>
-    </div>
-
     <div class="container">
       <div class="col-md-12">
-        <div class="section"><h2>Mappers</h2></div>
+        <div class="section">
+          <h2>Mappers</h2>
+        </div>
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>#</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Username</th>
+              <th>Flow Id</th>
+              <th>Pid</th>
+              <th>Flow Module</th>
+              <th>Stream Filter</th>
+              <th>Reducer Node</th>
             </tr>
           </thead>
           <tbody>
+          {% for flow_id, pid, flow_mod, stream_filter, reducer_node in mappers %}
             <tr>
-              <td>1</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
+              <td>{{ flow_id }}</td>
+              <td>{{ pid }}</td>
+              <td>{{ flow_mod }}</td>
+              <td>{{ stream_filter }}</td>
+              <td>{{ reducer_node }}</td>
             </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-md-12">
+        <div class="section">
+          <h2>Reducers</h2>
+        </div>
+        <table class="table table-striped">
+          <thead>
             <tr>
-              <td>2</td>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
+              <th>Flow Id</th>
+              <th>Pid</th>
+              <th>Flow Module</th>
+              <th>Stream Filter</th>
+              <th>Mapper Nodes</th>
             </tr>
+          </thead>
+          <tbody>
+          {% for flow_id, pid, flow_mod, stream_filter, mapper_nodes in reducers %}
             <tr>
-              <td>3</td>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
+              <td>{{ flow_id }}</td>
+              <td>{{ pid }}</td>
+              <td>{{ flow_mod }}</td>
+              <td>{{ stream_filter }}</td>
+              <td>{{ mapper_nodes }}</td>
             </tr>
+          {% endfor %}
           </tbody>
         </table>
       <div>
