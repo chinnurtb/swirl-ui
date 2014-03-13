@@ -12,9 +12,9 @@ init(_Type, Req, []) ->
 	{ok, Req, undefined}.
 
 handle(Req, State) ->
-    io:format("~p~n", [ets:tab2list(registry)]),
-    Headers = [{<<"content-type">>, <<"text/plain">>}],
-	{ok, Req2} = cowboy_req:reply(200, Headers, <<>>, Req),
+    Headers = [{<<"content-type">>, <<"text/html">>}],
+    {ok, Body} = index_dtl:render([]),
+	{ok, Req2} = cowboy_req:reply(200, Headers, Body, Req),
 	{ok, Req2, State}.
 
 terminate(_Reason, _Req, _State) ->
