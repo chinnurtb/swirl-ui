@@ -25,7 +25,9 @@ start(_StartType, _StartArgs) ->
                 {priv_dir, swirl_ui, "assets/js"}}
 		]}
 	]),
-	{ok, _} = cowboy:start_http(http, 100, [{port, 8080}], [
+
+    {ok, Port} = application:get_env(?MODULE, port),
+	{ok, _} = cowboy:start_http(http, 100, [{port, Port}], [
 		{env, [{dispatch, Dispatch}]}
 	]),
     swirl_ui_sup:start_link().
