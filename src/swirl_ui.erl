@@ -26,11 +26,18 @@ start(_StartType, _StartArgs) ->
         ]}
     ]),
 
-    {ok, Port} = application:get_env(?MODULE, port),
-    {ok, _} = cowboy:start_http(?MODULE, 100, [{port, Port}], [
+    RanchOpts = ranch_options(),
+    {ok, _} = cowboy:start_http(?MODULE, 100, RanchOpts, [
         {env, [{dispatch, Dispatch}]}
     ]),
     swirl_ui_sup:start_link().
 
 stop(_State) ->
     ok.
+
+%% private
+ranch_options() ->
+    {ok, Ip} = application:get_env(?MODULE, ip),
+    {ok, Port} = application:get_env(?MODULE, port),
+    [{ip, Ip}, {port, Port}].
+
