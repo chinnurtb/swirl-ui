@@ -27,7 +27,7 @@ start(_StartType, _StartArgs) ->
 	]),
 
     {ok, Port} = application:get_env(?MODULE, port),
-	{ok, _} = cowboy:start_http(http, 100, [{port, Port}], [
+	{ok, _} = cowboy:start_http(?MODULE, 100, [{port, Port}], [
 		{env, [{dispatch, Dispatch}]}
 	]),
     swirl_ui_sup:start_link().
