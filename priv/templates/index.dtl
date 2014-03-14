@@ -14,7 +14,7 @@
     <div class="container">
       <div class="col-md-12">
         <div class="header">
-          <h2 class="text-muted">Swirl Admin</h2>
+          <h2>Swirl Admin</h2>
         </div>
       </div>
 
@@ -34,7 +34,7 @@
               <th>Stream Name</th>
               <th>Stream Filter</th>
               <th>Flush</th>
-              <th>Reducer Node</th>
+              <th>Reducer</th>
             </tr>
           </thead>
           <tbody>
@@ -70,7 +70,7 @@
               <th>Stream Name</th>
               <th>Stream Filter</th>
               <th>Flush</th>
-              <th>Mapper Nodes</th>
+              <th># Mappers</th>
             </tr>
           </thead>
           <tbody>

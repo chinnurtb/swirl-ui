@@ -27,6 +27,6 @@ format_reducers([{{reducer, FlowId}, Pid, {FlowMod, FlowOpts, MapperNodes}} | T]
     Flush = swirl_utils:lookup(reducer_flush, FlowOpts, ?DEFAULT_REDUCER_FLUSH),
     FlushSec = trunc(Flush / 1000),
     [[pid_to_list(Pid), uuid:uuid_to_string(FlowId), FlowMod, StreamName,
-        StreamFilter, FlushSec, MapperNodes] | format_reducers(T)].
+        StreamFilter, FlushSec, length(MapperNodes)] | format_reducers(T)].
 
 
