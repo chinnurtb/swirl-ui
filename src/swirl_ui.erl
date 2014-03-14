@@ -19,10 +19,14 @@ start(_StartType, _StartArgs) ->
     Dispatch = cowboy_router:compile([
         {'_', [
             {"/", swirl_ui_handler, []},
-            {"/assets/css/[...]", cowboy_static,
-                {priv_dir, swirl_ui, "assets/css"}},
-            {"/assets/js/[...]", cowboy_static,
-                {priv_dir, swirl_ui, "assets/js"}}
+            {"/assets/css/[...]", cowboy_static, [
+                {directory, {priv_dir, swirl_ui, [<<"assets/css">>]}},
+                {mimetypes, [{<<".css">>, [<<"text/css">>]}]}
+            ]},
+            {"/assets/js/[...]", cowboy_static, [
+                {directory, {priv_dir, swirl_ui, [<<"assets/js">>]}},
+                {mimetypes, [{<<".js">>, [<<"application/javascript">>]}]}
+            ]}
         ]}
     ]),
 
