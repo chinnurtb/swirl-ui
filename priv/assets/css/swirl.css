@@ -1,0 +1,16 @@
+body {
+  padding-top: 70px;
+  padding-bottom: 50px;
+}
+
+.header {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e5e5e5;
+  color: #1ABC9C;
+}
+
+.section {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #e5e5e5;
+  color: #1ABC9C;
+}
