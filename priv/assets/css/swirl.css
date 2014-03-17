@@ -1,16 +1,42 @@
 body {
-  padding-top: 70px;
-  padding-bottom: 50px;
+    padding-top: 70px;
+    padding-bottom: 50px;
 }
 
 .header {
-  margin-bottom: 20px;
-  border-bottom: 1px solid #e5e5e5;
-  color: #1ABC9C;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e5e5e5;
+    color: #1abc9c;
+}
+
+.nav-pills>li>a {
+    color: #1abc9c;
+}
+
+.nav-pills>li>a:hover {
+    color: #16a085;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    background-color: #1abc9c;
 }
 
 .section {
-  margin-bottom: 15px;
-  border-bottom: 1px solid #e5e5e5;
-  color: #1ABC9C;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    color: #1abc9c;
+}
+
+a {
+    color: #3498db;
+}
+
+a:hover, a:focus {
+    color: #2980b9;
+}
+
+.footer {
+    padding-top: 10px;
+    border-top: 1px solid #e5e5e5;
+    color: #999;
 }

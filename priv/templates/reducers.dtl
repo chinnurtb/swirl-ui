@@ -1,0 +1,25 @@
+<div class="section">
+  <h3>Local reducers <small>({{ reducers_count }})</small></h3>
+</div>
+{% ifequal reducers_count 0 %}
+<div class="alert alert-info">
+  No active reducers.
+</div>
+{% else %}
+<table class="table table-striped sortable">
+  <thead>
+    <tr>
+      <th data-defaultsort="asc">Pid</th>
+      <th>Flow Id</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for pid, flow_id in reducers %}
+    <tr>
+      <td><a href="/reducers/{{ pid }}">{{ pid }}</a></td>
+      <td><a href="/flows/{{ flow_id }}">{{ flow_id }}</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endifequal %}

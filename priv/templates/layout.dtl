@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Swirl Console</title>
+
+    <link href="{{ base_url }}assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ base_url }}assets/css/bootstrap-sortable.css" rel="stylesheet">
+    <link href="{{ base_url }}assets/css/swirl.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="col-md-12">
+        <div class="header">
+          <ul class="nav nav-pills pull-right">
+            <li {% if flows %}class="active" {% endif %}><a href="/flows">Flows</a></li>
+            <li {% if mappers %}class="active" {% endif %}><a href="/mappers">Mappers</a></li>
+            <li {% if reducers %}class="active" {% endif %}><a href="/reducers">Reducers</a></li>
+          </ul>
+          <h2>Swirl Console</h2>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        {{ content }}
+      </div>
+
+      <div class="col-md-12">
+        <div class="footer">
+          <p>{{ node }}</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="{{ base_url }}assets/js/jquery.min.js"></script>
+    <script src="{{ base_url }}assets/js/bootstrap.min.js"></script>
+    <script src="{{ base_url }}assets/js/bootstrap-sortable.js"></script>
+  </body>
+</html>

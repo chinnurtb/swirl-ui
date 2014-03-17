@@ -1,0 +1,33 @@
+<div class="section">
+  <h3>Flows <small>({{ flows_count }})</small></h3>
+</div>
+{% ifequal flows_count 0 %}
+<div class="alert alert-info">
+  No active flows.
+</div>
+{% else %}
+<table class="table table-striped sortable">
+  <thead>
+    <tr>
+      <th data-defaultsort="asc">Id</th>
+      <th>Module</th>
+      <th>Stream Name</th>
+      <th>Stream Filter</th>
+      <th>Mappers #</th>
+      <th>Reducer Node</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for id, module, stream_name, stream_filter, mappers_count, reducer_node in flows %}
+    <tr>
+      <td><a href="/flows/{{ id }}">{{ id }}</a></td>
+      <td>{{ module }}</td>
+      <td>{{ stream_name }}</td>
+      <td>{{ stream_filter }}</td>
+      <td>{{ mappers_count }}</td>
+      <td>{{ reducer_node }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endifequal %}
