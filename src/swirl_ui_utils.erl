@@ -3,7 +3,8 @@
 %% public
 -export([
     safe_binary_to_pid/2,
-    safe_string_to_uuid/2
+    safe_string_to_uuid/2,
+    split_path/1
 ]).
 
 %% public
@@ -18,3 +19,8 @@ safe_string_to_uuid(String, Default) ->
     catch
         exit:badarg -> Default
     end.
+
+split_path(<<"/">>) ->
+    [];
+split_path(<<"/", Rest/binary>>) ->
+    binary:split(Rest, <<"/">>, [global, trim]).
