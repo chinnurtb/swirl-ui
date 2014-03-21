@@ -1,14 +1,15 @@
 <div class="section">
   <h3>
-    Flow
+    Process
     <span class="pull-right">
-      <small>{{ id }}</small>
-    </span></h3>
+      <small>{{ pid }}</small>
+    </span>
+  </h3>
 </div>
 
 {% if not_found %}
 <div class="alert alert-danger">
-  Flow not found.
+  Process not found.
 </div>
 {% else %}
 <table class="table table-striped">

@@ -9,15 +9,15 @@
 <table class="table table-striped sortable">
   <thead>
     <tr>
-      <th data-defaultsort="asc">Pid</th>
-      <th>Flow Id</th>
+      <th data-defaultsort="asc" width="30%">Flow Id</th>
+      <th>Pid</th>
     </tr>
   </thead>
   <tbody>
-  {% for pid, flow_id in reducers %}
+  {% for flow_id, pid in reducers %}
     <tr>
-      <td><a href="/reducers/{{ pid }}">{{ pid }}</a></td>
       <td><a href="/flows/{{ flow_id }}">{{ flow_id }}</a></td>
+      <td><a href="/processes/{{ pid }}">{{ pid }}</a></td>
     </tr>
   {% endfor %}
   </tbody>

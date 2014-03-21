@@ -9,23 +9,23 @@
 <table class="table table-striped sortable">
   <thead>
     <tr>
-      <th data-defaultsort="asc">Id</th>
+      <th data-defaultsort="asc" width="30%">Id</th>
       <th>Module</th>
       <th>Stream Name</th>
       <th>Stream Filter</th>
       <th>Mappers #</th>
-      <th>Reducer Node</th>
+      <th>Started At</th>
     </tr>
   </thead>
   <tbody>
-  {% for id, module, stream_name, stream_filter, mappers_count, reducer_node in flows %}
+  {% for id, module, stream_name, stream_filter, mappers_count, started_at in flows %}
     <tr>
       <td><a href="/flows/{{ id }}">{{ id }}</a></td>
       <td>{{ module }}</td>
       <td>{{ stream_name }}</td>
       <td>{{ stream_filter }}</td>
       <td>{{ mappers_count }}</td>
-      <td>{{ reducer_node }}</td>
+      <td>{{ started_at }}</td>
     </tr>
   {% endfor %}
   </tbody>
