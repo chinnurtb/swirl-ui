@@ -1,0 +1,48 @@
+<div class="section">
+  <h3>
+    Flow <small>new</small>
+  </h3>
+</div>
+
+{% if errors %}
+<div class="alert alert-danger">{{ errors }}</div>
+{% endif %}
+
+<form role="form" action="/flows/new" method="POST">
+  <div class="form-group">
+    <label for="dimensions">Dimensions</label>
+    <input class="form-control" id="dimensions" name="dimensions" />
+  </div>
+  <div class="form-group">
+    <label for="metrics">Metrics</label>
+    <input class="form-control" id="metrics" name="metrics" />
+  </div>
+  <div class="form-group">
+    <label for="stream_name">Stream Name</label>
+    <input class="form-control" id="stream_name" name="stream_name" />
+  </div>
+  <div class="form-group">
+    <label for="stream_filter">Stream Filter</label>
+    <input class="form-control" id="stream_filter" name="stream_filter" />
+  </div>
+  <div class="form-group">
+    <label>Mapper Nodes</label>
+    <br/>
+    {% for node in nodes %}
+    <label class="checkbox-inline">
+      <input type="checkbox" id="mapper_nodes" name="mapper_nodes" value="{{ node }}" /> {{ node }}
+    </label>
+    {% endfor %}
+  </div>
+  <div class="form-group">
+    <label>Reducer Node</label>
+    <br/>
+    {% for node in nodes %}
+    <label class="checkbox-inline">
+      <input type="checkbox" id="reducer_node" name="reducer_node" value="{{ node }}" /> {{ node }}
+    </label>
+    {% endfor %}
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-sm">Start Flow</button>
+</form>

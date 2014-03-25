@@ -11,6 +11,15 @@ route(<<"GET">>, [], Req, State) ->
 route(<<"GET">>, [<<"flows">>], Req, State) ->
     {ok, View} = swirl_ui_views:flows_view(),
     reply_html(View, Req, State);
+route(<<"GET">>, [<<"flows">>, <<"new">>], Req, State) ->
+    {ok, View} = swirl_ui_views:flow_new_view(),
+    reply_html(View, Req, State);
+route(<<"POST">>, [<<"flows">>, <<"new">>], Req, State) ->
+    {ok, KeyValues, Req2} = cowboy_req:body_qs(Req),
+    % TODO: start flow
+    io:format("DEBUG: ~p~n", [KeyValues]),
+    {ok, View} = swirl_ui_views:flows_view(),
+    reply_html(View, Req2, State);
 route(<<"GET">>, [<<"flows">>, Id], Req, State) ->
     {ok, View} = swirl_ui_views:flow_view(Id),
     reply_html(View, Req, State);

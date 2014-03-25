@@ -1,12 +1,16 @@
 body {
-    padding-top: 70px;
     padding-bottom: 50px;
+    padding-top: 70px;
 }
 
 .header {
-    margin-bottom: 20px;
     border-bottom: 2px solid #e5e5e5;
     color: #1abc9c;
+    margin-bottom: 20px;
+}
+
+.nav>li>a {
+    padding:5px 15px;
 }
 
 .nav-pills>li>a {
@@ -17,14 +21,31 @@ body {
     color: #16a085;
 }
 
-.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
-    background-color: #1abc9c;
+.nav-pills>li>a,
+.nav-pills>li>a:hover,
+.nav-pills>li>a:focus {
+    border-color: #ffffff;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 2px;
+    color: #1abc9c;
+}
+
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:hover,
+.nav-pills>li.active>a:focus {
+    background-color: #ffffff;
+    border-color: #1abc9c;
+    border-style: solid;
+    border-width: 2px;
+    color: #1abc9c;
+    padding: 4px 15px 6px 15px;
 }
 
 .section {
-    margin-bottom: 15px;
     border-bottom: 1px solid #e5e5e5;
     color: #1abc9c;
+    margin-bottom: 15px;
 }
 
 a {
@@ -36,7 +57,30 @@ a:hover, a:focus {
 }
 
 .footer {
-    padding-top: 10px;
     border-top: 1px solid #e5e5e5;
     color: #999;
+    padding-top: 10px;
+}
+
+.btn {
+    padding: 5px 12px;
+}
+
+.btn-primary {
+    background-color:#3498db;
+    border-color:#3498db;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open
+.dropdown-toggle.btn-primary {
+    background-color:#2980b9;
+    border-color:#2980b9;
+}
+
+form {
+    padding-bottom: 15px;
 }

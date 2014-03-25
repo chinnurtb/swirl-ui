@@ -1,6 +1,7 @@
 -module(swirl_ui_views).
 
 -export([
+    flow_new_view/0,
     flow_view/1,
     flows_view/0,
     mappers_view/0,
@@ -10,6 +11,13 @@
 ]).
 
 -define(BASE_URL, <<"http://localhost:9090/">>).
+
+flow_new_view() ->
+    {ok, Content} = flow_new_dtl:render([
+        % {errors, "Invalid flow!"},
+        {nodes, [node() | nodes()]}
+    ]),
+    layout(flows, Content).
 
 flow_view(Id) ->
     Id2 = swirl_ui_utils:safe_string_to_uuid(Id, <<>>),

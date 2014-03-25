@@ -1,5 +1,12 @@
 <div class="section">
-  <h3>Flows <small>({{ flows_count }})</small></h3>
+  <h3>
+    Flows <small>({{ flows_count }})</small>
+    <div class="pull-right">
+      <a class="btn btn-primary btn-sm" href="/flows/new" role="button">
+        New Flow
+      </a>
+    </div>
+  </h3>
 </div>
 {% ifequal flows_count 0 %}
 <div class="alert alert-info">
